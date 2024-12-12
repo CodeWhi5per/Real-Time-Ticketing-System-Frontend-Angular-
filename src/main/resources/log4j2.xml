@@ -1,0 +1,28 @@
+<Configuration>
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%-5level] %msg%n"/>
+        </Console>
+
+        <!-- File Appender -->
+        <File name="File" fileName="src/main/resources/logs/ticketing_system.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%-5level] %msg%n"/>
+        </File>
+
+        <!-- Custom Web Appender -->
+        <WebLogAppender name="WebLogAppender" immediateFlush="true">
+            <PatternLayout pattern="%msg%n"/>
+        </WebLogAppender>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="WebLogAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
+
+
